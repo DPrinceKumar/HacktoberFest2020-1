@@ -9,7 +9,7 @@
 >   If you don't have then create one <br/>
 ## Step 2. Make **4 Pull Request** <br/>
 ___
-# Steps for Creating First Pull request <br/>
+# ⚡⚡ Steps for Creating First Pull request ⚡⚡ <br/>
 ---
 * [Go to this Repo](https://github.com/DPrinceKumar/HactoberFest2020.git) <br/>
 * Click on Fork in top Right Corner <br/>
