@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Js on Steroids
+		</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+		<style>		
+		.container-1{
+				border: 1px solid black;
+				text-align: center;
+				width: 75%;
+				margin: 0px auto;
+				margin-top: 10px;
+			}
+
+			.flex-container-1{
+				border: 1px solid black;
+				display: flex;
+				padding: 10px;
+				justify-content: space-evenly;
+				flex-wrap: wrap;
+			} 
+
+			.flex-container-1 div{
+				padding: 10px;
+				border: 1px solid black;
+				display: flex;
+				align-items: center;
+			} 
+		</style>	
+	</head>
+	
+	<body>
+		<div class="container-1">
+			<h2>Challenge 1: Age in Days</h2>
+			<div class="flex-container-1">
+				<div>
+					<button class="btn btn-primary" onclick="ageInDays()">Click me</button>
+				</div>
+				
+				<div>
+					<button class="btn btn-danger" onclick="reset()">Reset</button>
+				</div>
+			</div>
+			<div class="flex-container-1">
+				<div id="flex-result"> </div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
