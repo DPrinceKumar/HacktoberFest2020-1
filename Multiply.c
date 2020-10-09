@@ -1,3 +1,11 @@
+#include<stdio.h>
+
+int main(){
+  int a,b;
+  scanf("%d %d",&a,&b);
+  printf("%d",a*b);
+  return 0;
+
 #include <stdio.h>
 
 void main() {
@@ -9,5 +17,4 @@ void main() {
 	
 	multiple = num1 * num2;
 	
-	printf("%d * %d = %d",num1,num2,multiple);
-}
+	printf("%d * %d = %d",num1,num2,multiple);}
