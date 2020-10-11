@@ -35,7 +35,7 @@ void main()
     printf("\nThe Product of those numbers is %d", product);
 }
 
-
+}
 //Created by rupali	
 #include<stdio.h>
 void main(){
@@ -46,5 +46,5 @@ void main(){
     scanf("%f",&n2);
     printf("Result of multiply of two numbers:%f",n1*n2);
     
-}
+
 	
