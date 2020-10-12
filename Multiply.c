@@ -5,7 +5,7 @@ int main(){
   return 0;
 
 #include <stdio.h>
-
+//Main method
 void main() {
 	int num1,num2,multiple;
 	printf("Enter first number:");
