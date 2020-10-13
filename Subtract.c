@@ -13,5 +13,5 @@ int main()
     c=b-a;
   }
   printf("Subtraction of given two numbers is %d",c);
-  retrn 0;
+  return 0;
 }
