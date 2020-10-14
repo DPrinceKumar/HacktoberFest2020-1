@@ -1,10 +1,9 @@
 
-#include <stdio.h> 
-  
-/* Function to left Rotate arr[] of size n by 1*/
+#include <iostream> 
+using namespace std; 
 void leftRotatebyOne(int arr[], int n); 
   
-/*Function to left rotate arr[] of size n by d*/
+
 void leftRotate(int arr[], int d, int n) 
 { 
     int i; 
@@ -20,19 +19,22 @@ void leftRotatebyOne(int arr[], int n)
     arr[i] = temp; 
 } 
   
-/* utility function to print an array */
 void printArray(int arr[], int n) 
 { 
     int i; 
     for (i = 0; i < n; i++) 
-        printf("%d ", arr[i]); 
+        cout << arr[i] << " "; 
 } 
   
-/* Driver program to test above functions */
+
 int main() 
 { 
-    int arr[] = { 1, 2, 3, 4, 5, 6, 7 }; 
-    leftRotate(arr, 2, 7); 
-    printArray(arr, 7); 
+    int n,i;
+    cin >> n;
+    int arr[n];
+    for(i=0;i<n;i++)
+    cin >> arr[i];
+    leftRotate(arr, 2, n); 
+    printArray(arr, n); 
     return 0; 
 } 

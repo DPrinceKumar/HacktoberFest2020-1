@@ -5,7 +5,7 @@ int main(){
   return 0;
 
 #include <stdio.h>
-
+//Main method
 void main() {
 	int num1,num2,multiple;
 	printf("Enter first number:");
@@ -45,6 +45,4 @@ void main(){
     printf("\n Enter number2:");
     scanf("%f",&n2);
     printf("Result of multiply of two numbers:%f",n1*n2);
-    
-
-	
+}
