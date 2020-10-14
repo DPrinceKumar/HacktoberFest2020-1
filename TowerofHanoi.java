@@ -1,21 +1,21 @@
-import java.util.*;
-public class TowerofHanoi {
-	public static void TOH(int n, char SRC, char DEST, char MIDD) {
-		if(n == 0)
-			return ;
-		// PLACE N-1 PLATES FROM SOURCE TO MIDDLE
-		TOH(n-1,SRC,MIDD,DEST);
-		//PLACE Nth PLATE FROM SOURCE TO DESTINATION
-		System.out.println("PLacing  "+ n + " from "+ SRC +" to "+ DEST);
-		//PLACE N-1 PLATE FROM  MIDDLE TO DESTINATION
-		TOH(n-1,MIDD,DEST,SRC);
-	
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-				TOH(4	,'A','C','B');// FROM A TO C WITH THE HELP OF B
-				
-	}
-
-}
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+void towerOfHanoi(int n, char from_rod, char to_rod, char aux_rod)  
+{  
+    if (n == 1)  
+    {  
+        cout << "Move disk 1 from rod " << from_rod <<   " to rod " << to_rod<<endl;  
+        return;  
+    }  
+    towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);  
+    cout << "Move disk " << n << " from rod " << from_rod <<  " to rod " << to_rod << endl;  
+    towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);  
+}  
+  
+int main()  
+{  
+    int n = 4;
+    towerOfHanoi(n, 'A', 'C', 'B'); 
+    return 0;  
+}  
