@@ -33,3 +33,14 @@ void main() {
     printf("%d + %d = %d", number1, number2, sum);
     return 0;
 }
+//created by rupali
+#include<stdio.h>
+void main(){
+    float n1,n2,mul;
+    printf("\nEnter number1:");
+    scanf("%float",&n1);
+    printf("\n Enter number2:");
+    scanf("%f",&n2);
+    printf("Result of addition of two numbers:%f",n1+n2);
+    
+}
