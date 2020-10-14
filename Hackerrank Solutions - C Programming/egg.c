@@ -1,0 +1,424 @@
+#include<stdio.h>
+#include<GL/glut.h>
+int c=0;
+void myInit()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(1,1,1,1);
+    glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0,500,0,500);
+}
+void square()
+{
+	glColor3f(0.3,0,0);
+	glBegin(GL_POLYGON);
+	glVertex2i(75,100);
+    glVertex2i(75,400);
+	glVertex2i(400,100);
+    glVertex2i(400,400);
+	glVertex2i(75,400);
+    glEnd();
+}
+void egg1()
+{
+	    glColor3f(1,1,1);
+	    glBegin(GL_POLYGON);
+		glVertex2i(112.5,387.5);
+		glVertex2i(100,370);
+		glVertex2i(100,362.5);
+		glVertex2i(102.5,360);
+		glVertex2i(105,357.5);
+		glVertex2i(107.5,355);
+		glVertex2i(117.5,355);
+		glVertex2i(120,357.5);
+		glVertex2i(122.5,360);
+		glVertex2i(125,362.5);
+		glVertex2i(125,370);
+	    glVertex2i(112.5,387.5);
+		glEnd();
+}
+void egg2()
+{
+    glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+	glVertex2i(162.5,387.5);
+	glVertex2i(150,370);
+	glVertex2i(150,362.5);
+	glVertex2i(152.5,360);
+	glVertex2i(155,357.5);
+	glVertex2i(157.5,355);
+	glVertex2i(165,355);
+	glVertex2i(170,357.5);
+	glVertex2i(172.5,360);
+	glVertex2i(175,362.5);
+	glVertex2i(175,370);
+	glVertex2i(162.5,387.5);
+    glEnd();
+}
+void egg3()
+{
+	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+    glVertex2i(212.5,387.5);
+	glVertex2i(200,370);
+	glVertex2i(200,362.5);
+    glVertex2i(202.5,360);
+    glVertex2i(205,357.5);
+    glVertex2i(210,355);
+	glVertex2i(217.5,355);
+    glVertex2i(220,357.5);
+    glVertex2i(222.5,360);
+	glVertex2i(225,362.5);
+    glVertex2i(225,370);
+	glVertex2i(212.5,387.5);
+	glEnd();
+}
+void egg4()
+{
+	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+	glVertex2i(262.5,387.5);
+	glVertex2i(250,370);
+	glVertex2i(250,362.5);
+	glVertex2i(252.5,360);
+	glVertex2i(255,357.5);
+	glVertex2i(257.5,355);
+	glVertex2i(267.5,355);
+	glVertex2i(270,357.5);
+	glVertex2i(272.5,360);
+	glVertex2i(275,362.5);
+	glVertex2i(275,370);
+	glVertex2i(262.5,387.5);
+	glEnd();
+}
+void egg5()
+{
+	glColor3f(1,1,1);
+    glBegin(GL_POLYGON);
+	glVertex2i(312.5,387.5);
+	glVertex2i(300,370);
+	glVertex2i(300,362.5);
+	glVertex2i(302.5,360);
+	glVertex2i(305,357.5);
+	glVertex2i(307.5,355);
+	glVertex2i(317.5,355);
+	glVertex2i(320,357.5);
+	glVertex2i(322.5,360);
+	glVertex2i(325,362.5);
+	glVertex2i(325,370);
+	glVertex2i(312.5,387.5);
+	glEnd();
+
+
+}
+void egg6()
+{
+
+        glColor3f(1,1,1);
+        glBegin(GL_POLYGON);
+		glVertex2i(112.5,337.5);
+		glVertex2i(100,320);
+		glVertex2i(100,312.5);
+		glVertex2i(102.5,310);
+		glVertex2i(105,307.5);
+		glVertex2i(107.5,305);
+		glVertex2i(117.5,305);
+		glVertex2i(120,307.5);
+		glVertex2i(122.5,310);
+		glVertex2i(125,312.5);
+	    glVertex2i(125,320);
+		glVertex2i(112.5,337.5);
+		glEnd();
+}
+void egg7()
+{
+    glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+	glVertex2i(162.5,337.5);
+	glVertex2i(150,320);
+	glVertex2i(150,312.5);
+	glVertex2i(152.5,310);
+	glVertex2i(155,307.5);
+	glVertex2i(157.5,305);
+	glVertex2i(165,305);
+	glVertex2i(170,307.5);
+	glVertex2i(172.5,310);
+	glVertex2i(175,312.5);
+	glVertex2i(175,320);
+	glVertex2i(162.5,337.5);
+    glEnd();
+}
+void egg8()
+{
+	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+    glVertex2i(212.5,337.5);
+	glVertex2i(200,320);
+	glVertex2i(200,312.5);
+    glVertex2i(202.5,310);
+    glVertex2i(205,307.5);
+    glVertex2i(210,305);
+	glVertex2i(217.5,305);
+    glVertex2i(220,307.5);
+    glVertex2i(222.5,310);
+	glVertex2i(225,312.5);
+    glVertex2i(225,320);
+	glVertex2i(212.5,337.5);
+	glEnd();
+}
+void egg9()
+{
+	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+	glVertex2i(262.5,337.5);
+	glVertex2i(250,320);
+	glVertex2i(250,312.5);
+	glVertex2i(252.5,310);
+	glVertex2i(255,307.5);
+	glVertex2i(257.5,305);
+	glVertex2i(267.5,305);
+	glVertex2i(270,307.5);
+	glVertex2i(272.5,310);
+	glVertex2i(275,312.5);
+	glVertex2i(275,320);
+	glVertex2i(262.5,337.5);
+	glEnd();
+}
+void egg10()
+{
+	glColor3f(1,1,1);
+    glBegin(GL_POLYGON);
+	glVertex2i(312.5,337.5);
+	glVertex2i(300,320);
+	glVertex2i(300,312.5);
+	glVertex2i(302.5,310);
+	glVertex2i(305,307.5);
+	glVertex2i(307.5,305);
+	glVertex2i(317.5,305);
+	glVertex2i(320,307.5);
+	glVertex2i(322.5,310);
+	glVertex2i(325,312.5);
+	glVertex2i(325,320);
+	glVertex2i(312.5,337.5);
+	glEnd();
+}
+void egg11()
+{
+
+    glColor3f(1,1,1);
+    glBegin(GL_POLYGON);
+	glVertex2i(112.5,287.5);
+	glVertex2i(100,270);
+	glVertex2i(100,262.5);
+	glVertex2i(102.5,260);
+	glVertex2i(105,257.5);
+	glVertex2i(107.5,255);
+	glVertex2i(117.5,255);
+	glVertex2i(120,257.5);
+	glVertex2i(122.5,260);
+	glVertex2i(125,262.5);
+	glVertex2i(125,270);
+	glVertex2i(112.5,287.5);
+	glEnd();
+}
+void egg12()
+{
+     glColor3f(1,1,1);
+	 glBegin(GL_POLYGON);
+     glVertex2i(162.5,287.5);
+	 glVertex2i(150,270);
+	 glVertex2i(150,262.5);
+	 glVertex2i(152.5,260);
+	 glVertex2i(155,257.5);
+	 glVertex2i(157.5,255);
+	 glVertex2i(165,255);
+	 glVertex2i(170,257.5);
+	 glVertex2i(172.5,260);
+	 glVertex2i(175,262.5);
+	 glVertex2i(175,270);
+	 glVertex2i(162.5,287.5);
+     glEnd();
+}
+void egg13()
+{
+	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+    glVertex2i(212.5,287.5);
+	glVertex2i(200,270);
+	glVertex2i(200,262.5);
+    glVertex2i(202.5,260);
+    glVertex2i(205,257.5);
+    glVertex2i(210,255);
+	glVertex2i(217.5,255);
+    glVertex2i(220,257.5);
+    glVertex2i(222.5,260);
+	glVertex2i(225,262.5);
+    glVertex2i(225,270);
+	glVertex2i(212.5,287.5);
+	glEnd();
+}
+void egg14()
+{
+	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+	glVertex2i(262.5,287.5);
+	glVertex2i(250,270);
+	glVertex2i(250,262.5);
+	glVertex2i(252.5,260);
+	glVertex2i(255,257.5);
+	glVertex2i(257.5,255);
+	glVertex2i(267.5,255);
+	glVertex2i(270,257.5);
+	glVertex2i(272.5,260);
+	glVertex2i(275,262.5);
+	glVertex2i(275,270);
+	glVertex2i(262.5,287.5);
+	glEnd();
+}
+void egg15()
+{
+	glColor3f(1,1,1);
+    glBegin(GL_POLYGON);
+	glVertex2i(312.5,287.5);
+	glVertex2i(300,270);
+	glVertex2i(300,262.5);
+	glVertex2i(302.5,260);
+	glVertex2i(305,257.5);
+	glVertex2i(307.5,255);
+	glVertex2i(317.5,255);
+	glVertex2i(320,257.5);
+	glVertex2i(322.5,260);
+	glVertex2i(325,262.5);
+	glVertex2i(325,270);
+	glVertex2i(312.5,287.5);
+	glEnd();
+}
+void egg16()
+{
+	    glColor3f(1,1,1);
+	    glBegin(GL_POLYGON);
+		glVertex2i(112.5,237.5);
+		glVertex2i(100,220);
+		glVertex2i(100,212.5);
+		glVertex2i(102.5,210);
+		glVertex2i(105,207.5);
+		glVertex2i(107.5,205);
+		glVertex2i(117.5,205);
+		glVertex2i(120,207.5);
+		glVertex2i(122.5,210);
+		glVertex2i(125,212.5);
+		glVertex2i(125,220);
+	    glVertex2i(112.5,237.5);
+		glEnd();
+}
+void egg17()
+{
+   	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+    glVertex2i(162.5,237.5);
+	glVertex2i(150,220);
+	glVertex2i(150,212.5);
+	glVertex2i(152.5,210);
+	glVertex2i(155,207.5);
+	glVertex2i(157.5,205);
+	glVertex2i(165,205);
+	glVertex2i(170,207.5);
+	glVertex2i(172.5,210);
+	glVertex2i(175,212.5);
+	glVertex2i(175,220);
+	glVertex2i(162.5,237.5);
+    glEnd();
+}
+void egg18()
+{
+	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+    glVertex2i(212.5,237.5);
+	glVertex2i(200,220);
+	glVertex2i(200,212.5);
+    glVertex2i(202.5,210);
+    glVertex2i(205,207.5);
+    glVertex2i(210,205);
+	glVertex2i(217.5,205);
+    glVertex2i(220,207.5);
+    glVertex2i(222.5,210);
+	glVertex2i(225,212.5);
+    glVertex2i(225,220);
+	glVertex2i(212.5,237.5);
+	glEnd();
+}
+void egg19()
+{
+	glColor3f(1,1,1);
+	glBegin(GL_POLYGON);
+	glVertex2i(262.5,237.5);
+	glVertex2i(250,220);
+	glVertex2i(250,212.5);
+	glVertex2i(252.5,210);
+	glVertex2i(255,207.5);
+	glVertex2i(257.5,205);
+	glVertex2i(267.5,205);
+	glVertex2i(270,207.5);
+	glVertex2i(272.5,210);
+	glVertex2i(275,212.5);
+	glVertex2i(275,220);
+	glVertex2i(262.5,237.5);
+	glEnd();
+}
+void egg20()
+{
+	glColor3f(1,1,1);
+    glBegin(GL_POLYGON);
+	glVertex2i(312.5,237.5);
+	glVertex2i(300,220);
+	glVertex2i(300,212.5);
+	glVertex2i(302.5,210);
+	glVertex2i(305,207.5);
+	glVertex2i(307.5,205);
+	glVertex2i(317.5,205);
+	glVertex2i(320,207.5);
+	glVertex2i(322.5,210);
+	glVertex2i(325,212.5);
+	glVertex2i(325,220);
+	glVertex2i(312.5,237.5);
+	glEnd();
+
+
+}
+void display()
+{
+
+   square();
+   egg1();
+   egg2();
+   egg3();
+   egg4();
+   egg5();
+   egg6();
+   egg7();
+   egg8();
+   egg9();
+   egg10();
+   egg11();
+   egg12();
+   egg13();
+   egg14();
+   egg15();
+   egg16();
+   egg17();
+   egg18();
+   egg19();
+   egg20();
+   glFlush();
+}
+void main(int argc,char **argv)
+{
+	glutInit(&argc,argv);
+	glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+	glutInitWindowSize(1000,1000);
+	glutInitWindowPosition(0,0);
+	glutCreateWindow("GOLDEN EGG");
+	myInit();
+	glutDisplayFunc(display);
+	glutMainLoop();
+}
