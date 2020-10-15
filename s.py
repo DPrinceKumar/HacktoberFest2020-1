@@ -1,5 +1,0 @@
-p=float(input("Enter first num: "))
-q=float(input("Enter Second num : "))
-print(p+q)
-print(p-q)
-print(p*q)
