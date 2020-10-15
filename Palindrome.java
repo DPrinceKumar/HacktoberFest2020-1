@@ -1,22 +1,30 @@
-import java.util.*;
-class Palindrome
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
 {
-    public static void main(String s[])
-    {
-    Scanner k=new Scanner(System.in);//Create a scanner object
-    System.out.println("Enter the first String");
-    String s1=k.nextLine();//Accept string
-    String palindrome="";;
-    for(int i=0;i<s1.length();i++)
-    {
-        palindrome=s1.charAt(i)+palindrome;//Reverses String
-    }
-    if(palindrome.equals(s1))
-    System.out.println("The reversed string is is "+ palindrome +" and it is a palindrome");//Displays String
-    else
-    System.out.println("The reversed string is is"+ palindrome +"and it is not a palindrome");//Displays String
-    
-}
+     long long int n, num, digit, rev = 0;
+
+     cout << "Enter a positive number: ";
+     cin >> num;
+
+     n = num;
+
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
+
+     cout << " The reverse of the number is: " << rev << endl;
+
+     if (n == rev)
+         cout << " The number is a palindrome.";
+     else
+         cout << " The number is not a palindrome.";
+
+    return 0;
 }
     
     
