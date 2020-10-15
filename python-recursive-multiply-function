@@ -6,6 +6,7 @@ while(True):
             return (m + multiply(m,n-1))
     
     M = int(input("Input M "))
+    #gets input from user
     if (M==-1):
         break
     N = int(input("Input N "))
