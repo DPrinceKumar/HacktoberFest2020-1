@@ -6,7 +6,7 @@ int main()
  cin >> x >> y;
 
   z = x + y;
-  cout << z;
+  cout <<"Sum of two no.: "<< z;
 
   return 0;
 }
