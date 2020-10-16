@@ -5,7 +5,7 @@
 ```
 pip install package_name
 ```
-**2. Run the text2speech.py on command prompt using following command.**
+**2. Run the pdf2audio.py on command prompt using following command.**
 ```
 python pdf2audio.py
 ```
