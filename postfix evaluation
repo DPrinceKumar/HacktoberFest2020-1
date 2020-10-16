@@ -1,0 +1,117 @@
+#include<stdio.h>
+#include<math.h>
+#define MAX 80
+
+struct stack
+{
+    int data[MAX];
+    int top;
+};
+typedef struct stack STACK;
+STACK s;
+
+int isEmpty()
+{
+    if(s.top == -1)
+        return 1;
+    else
+        return 0;
+}
+
+int isFull()
+{
+    if(s.top == MAX - 1)
+        return 1;
+    else 
+        return 0;
+}
+
+void push(int num)
+{
+    if(isFull())
+        printf("The stack is full\n");
+    else
+    {
+        s.top++;
+        s.data[s.top] = num;
+    }
+    
+}
+
+int pop()
+{
+    int x;
+    if(isEmpty())
+        printf("The stack is empty\n");
+    else
+    {
+        x = s.data[s.top--];
+        return x;
+    }
+
+}
+
+int gettype(char t)
+{
+    switch(t)
+    {
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+        case '%':
+        case '$':
+        case '^': return 2;
+        default: return 1;
+    }
+}
+
+void eval(char op, int num1, int num2)
+{
+    int result;
+    switch(op)
+    {
+        case '+': result = num1 + num2;
+                break;
+        case '-': result = num2 - num1;
+                break;
+        case '*': result = num1*num2;
+                break;
+        case '/': result = num1/num2;
+                break;
+        case '%': result = num1%num2;
+                break;
+        case '$':
+        case '^': result = pow(num1, num2);
+                break;
+    }
+    push(result);
+}
+
+void main()
+{
+    char postfix[MAX];
+    int i, num1, num2, type, ans, result, ch;
+    printf("Enter the postfix expression\n");
+    scanf("%s", postfix);
+    for(i=0;postfix[i]!='\0';i++)
+    {
+        type = gettype(postfix[i]);
+        switch(type)
+        {
+            case 1: ch = postfix[i] - '0';
+            push(ch);
+            break;
+            case 2:num1 = pop();
+                   num2 = pop();
+                   eval(postfix[i], num1, num2);
+                   break;
+
+        }
+        
+        
+    }
+    result = pop();
+    printf("The value of the postfix expression is %d", result);
+    
+}
