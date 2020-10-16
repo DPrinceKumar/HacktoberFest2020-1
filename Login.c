@@ -71,7 +71,7 @@ clrscr();
 printf("\n\t\t\t **Welcome**");
 printf("\n\n\t\t Enter User Name\t:");
 scanf("%s",&uid);
-printf("\n\n\t\t\ Enter Password\t\t:");
+printf("\n\n\t\t Enter Password\t\t:");
 while(1){
 ch=getch();
 if(ch==13)
