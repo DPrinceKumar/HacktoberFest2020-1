@@ -1,6 +1,4 @@
- funtion(a,b){
-   return a + b
- 
- 
+function add(a,b){
+return a,b
 }
-funtion(10,5)
+function(10,5)
