@@ -1,3 +1,3 @@
-a = input('Please 1st int: ')
-b = input('Please 2nd int: ')
-print('Sum: ', a + b)
+a=int(input())
+b=int(input())
+print("sub:",a-b)
