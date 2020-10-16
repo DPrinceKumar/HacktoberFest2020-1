@@ -1,4 +1,4 @@
-## Text 2 Speech in less than 10 lines of code
+## PDF 2 AUDIO
 
 **1.Install the required packages:- PyPDF2, pyttsx3, gtts**
 **Use the below command, type it on command prompt and hit enter.**
