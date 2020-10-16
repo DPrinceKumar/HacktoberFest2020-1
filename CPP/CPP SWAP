@@ -1,9 +1,10 @@
+// cpp program to swap variable without using third variable
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int a = 5, b = 10;//swap without third variable
+    int a = 5, b = 10;
 
     cout << "Before swapping." << endl;
     cout << "a = " << a << ", b = " << b << endl;
