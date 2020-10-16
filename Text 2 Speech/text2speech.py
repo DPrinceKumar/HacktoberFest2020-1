@@ -1,4 +1,4 @@
-/* code provided by Amey Band */
+# Code provided by Amey Band 
 
 from gtts import gTTS
 
