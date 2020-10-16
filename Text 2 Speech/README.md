@@ -8,4 +8,4 @@ pip install gtts
 ```
 python text2speech.py
 ```
-After successful execution, audio file will be saved into your current local directory. 
+**After successful execution, audio file will be saved into your current local directory.** 
