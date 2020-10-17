@@ -28,4 +28,4 @@ ___
 * Next click **create new pull requestion**  <br/>
 <img src="https://i.ibb.co/DVjgKQG/Screenshot-2020-10-01-at-11-06-03-AM.png" alt="Screenshot-2020-10-01-at-11-06-03-AM" border="0"></a>  <br/>
   <br/>
-## Repeat Same step 4 time and ceck your hacktober profile  <br/>
+## Repeat Same step 4 time and check your hacktober profile  <br/>
