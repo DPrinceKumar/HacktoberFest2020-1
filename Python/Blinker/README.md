@@ -7,6 +7,7 @@ A Programming Language
 - Error Handling.
 
 ## Create a variable:
+```text
 > 3 + 3       // 6
 > 3 ^ 2       // 9
 > 3 - 1       // 2
@@ -15,5 +16,6 @@ A Programming Language
 > 1 + (2 * 3)  // 7
 > 10 / 0      // Division By Zero Error
 > vr variable_name = variable_value
+```
 
 ###### Enjoy Using the Language, and build your own language from scratch. 
