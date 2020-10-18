@@ -1,0 +1,99 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+     {
+     int data;
+     struct node *next;
+     };
+struct node* head,*temp,*newnode;
+
+void createNodeList(int n);
+void displayList();
+void insert_between(int n);
+
+int main()
+{
+
+     int n;
+     printf("\n To create and display the linked list\n");
+     printf("-------------------------------------------");
+
+     printf("enter the number of nodes\n");
+     scanf("%d",&n);
+     createNodeList(n);
+     printf("display the data entered in the list\n");
+     displayList();
+     newnode=(struct node*)malloc(sizeof(struct node));
+     printf("\n");
+     printf("enter data to insert\n");
+     scanf("%d",&newnode->data);
+     newnode->next=head;
+     head=newnode;
+     displayList();
+     insert_between(n);
+     displayList();
+
+     return 0;
+
+}
+void createNodeList(int n)
+{
+    int i=1;
+
+     while(i<=n)
+        {
+           newnode=(struct node*)malloc(sizeof(struct node));
+           printf("enter data\n");
+           scanf("%d",&newnode->data);
+            newnode->next=0;
+            if (head==0)
+              {
+                  head=temp=newnode;
+              }
+            else
+              {
+                 temp->next =newnode;
+                 temp=newnode;
+              }
+            i++;
+         }
+
+}
+ void displayList()
+ {
+      temp=head;
+
+     while(temp!=0)
+     {
+         printf("%d",temp ->data);
+         temp=temp->next;
+     }
+
+ }
+void insert_between(int n)
+{
+    int pos,i=1;
+    newnode=(struct node*)malloc(sizeof(struct node));
+    printf("enter the position\n");
+    scanf("%d",&pos);
+    if(pos>n)
+    {
+        printf("invalid position\n");
+
+    }
+    else
+    {
+        temp=head;
+        while(i<pos)
+        {
+             temp=temp->next;
+             i++;
+
+        }
+        printf("enter data\n");
+        scanf("%d",&newnode->data);
+        newnode->next=temp->next;
+        temp->next=newnode;
+    }
+}
