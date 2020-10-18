@@ -1,5 +1,6 @@
 ## QR-Code Generator
 
+### Steps to follow:
 **1.Install the required packages:- pypng, pyqrcode**
 **Use the below command, type it on command prompt and hit enter.**
 ```
