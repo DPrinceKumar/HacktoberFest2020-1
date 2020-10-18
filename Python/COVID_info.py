@@ -20,4 +20,4 @@ cases = soup.find("div", {"class":"maincounter-number"}).get_text().strip()
 
 while True:
 	time.sleep(10)
-  notifyMe('Total number', cases)
+  	notifyMe('Total number', cases)
