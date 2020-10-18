@@ -1,3 +1,4 @@
+//code for hactoberfest2020
 #include <stdio.h>
 int main()
 {
