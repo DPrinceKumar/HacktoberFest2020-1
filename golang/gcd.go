@@ -4,14 +4,14 @@ import(
 )
 
 
-func gcd(a, b int)(int){
+func abigi(a, b int)(int){
 	if a<b {
 	   a, b = b, a
 	}
 	if a % b == 0{
 		return b
 	}else{
-		num:= gcd(b, a%b)
+		num:= abigi(b, a%b)
 		return num
 		
 	}
@@ -25,6 +25,6 @@ func main(){
 	fmt.Scanln(&number1)
 	fmt.Printf("Enter the second number")
 	fmt.Scanln(&number2)
-	GCD:=gcd(number1, number2)
+	GCD:=abigi(number1, number2)
 	fmt.Println("GCD of ",number1," and ",number2,"is",GCD)
 }
