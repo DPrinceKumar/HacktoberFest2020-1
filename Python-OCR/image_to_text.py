@@ -9,6 +9,6 @@ try:
 except ImportError:
  import Image
 
-image = 'sample.jpg'
+image = 'sample1.jpg'
 extracted_text= pytesseract.image_to_string(Image.open(image))
 print(extracted_text)
