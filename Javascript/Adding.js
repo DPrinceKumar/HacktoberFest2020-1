@@ -1,4 +1,5 @@
-function add(a,b){
-return a,b
+const add = (numbers) => {
+    const x = [...numbers]
+
+    return x.reduce( (a,b) => a+b, 0 )
 }
-function(10,5)
