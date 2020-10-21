@@ -1,6 +1,6 @@
 
 const reverse = (method='long', string) => {
-    y = [...string]
+   const y = [...string]
     if(method==='long'){
         return y.reverse().join('').toString();
     }else{
