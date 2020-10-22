@@ -5,17 +5,24 @@ public class Check_Prime_or_Not{
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter number to check Prime or Not.");
         int num = scan.nextInt();
-        int flag=1;
-        for (int i = 2; i < num; i++) {
-            if (num % i ==0) {
-                System.out.println("Entered number is not Prime!");
-                flag =0;
-                break;
+
+        if (checkPrime(num)) {
+            System.out.println("Entered number is Prime!");
+        } else {
+            System.out.println("Entered number is not Prime!");
+        }
+    }
+    
+    public static boolean checkPrime(int num) {
+         if (num % 2 == 0) {
+            return false;
+        }
+        for (int i = 3; i * i <= num; i += 2) {
+            if (num % i == 0) {
+                return false;
             }
         }
-        if (flag==1) {
-            System.out.println("Entered number is Prime!");
-        }
+        return true;
     }
 }
 
