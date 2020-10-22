@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="validate.js"></script>
+</head>
+<body>
+<form action="#" name="StudentRegistration" onsubmit="return(validate());">
+
+<table cellpadding="2" width="40%" bgcolor="#9370DB" align="center"
+cellspacing="2">
+
+<tr>
+<td colspan=2>
+<center><font size=4><b>Student Registration Form</b></font></center>
+</td>
+</tr>
+
+<tr>
+<td>First Name:</td>
+<td><input type=text name=firstnames id="firstname" size="30"></td>
+</tr>
+
+<tr>
+<td>last Name:</td>
+<td><input type="text" name="lastname" id="lastname"
+size="30"></td>
+</tr>
+<tr>
+<td>Age:</td>
+<td><input type="text" name="Age" id="Age" size="30"></td>
+</tr>
+
+<tr>
+<td>Email:</td>
+<td><input type="text" name="email" id="email" size="30"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="text" name="password" id="password" size="30"></td>
+</tr>
+
+<tr>
+<td>Sex</td>
+<td><input type="radio" name="sex" value="male" size="10">Male
+<input type="radio" name="sex" value="Female" size="10">Female</td>
+</tr>
+<tr>
+<td>City</td>
+<td><select name="City">
+<option value="-1" selected>select..</option>
+<option value="Lahore">Lahore</option>
+<option value="Karachi">Karachi</option>
+<option value="Islamabad">Islamabad</option>
+<option value="Peshawar">Pesahawar</option>
+</select></td>
+</tr>
+<tr>
+<td>Course</td>
+<td><select name="Course">
+<option value="-1" selected>select..</option>
+<option value="software Engineering">Software Engineering</option>
+<option value="computer science">Computer science</option>
+<option value="MBA">MBA</option>
+<option value="BCA">BCA</option>
+</select></td>
+</tr>
+<tr>
+<td> 
+<input type="checkbox" name="student" value="I am student"> I am student<br>
+<input type="checkbox" name="businessman" value="I am business man"> I am business man
+</td>
+</tr>
+
+
+<tr>
+<td><input type="reset"></td>
+<td colspan="2"><input type="submit" value="Submit Form" /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
