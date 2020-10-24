@@ -1,0 +1,68 @@
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class RegistrationServlet extends HttpServlet {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("text/html");
+		
+		String name = request.getParameter("name");
+		String password = request.getParameter("password");
+		String email = request.getParameter("email");
+		String date = request.getParameter("date");
+		String number = request.getParameter("number");
+		String file = request.getParameter("file");
+		String gender = request.getParameter("gender");
+		String[] languages = request.getParameterValues("language");
+		String course = request.getParameter("course");
+		String comment = request.getParameter("comment");
+		
+		PrintWriter out = response.getWriter();
+		
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<title>");
+		out.println("Form Details");
+		out.println("</title>");
+		out.println("</head>");
+		
+		out.println("<body>");
+		
+		out.println("Name is: " + name);
+		out.println("<br />");
+		
+		out.println("Password is: " + password);
+		out.println("<br />");
+		
+		out.println("email is: " + email);
+		out.println("<br />");
+		
+		out.println("date is: " + date);
+		out.println("<br />");
+		
+		out.println("number is: " + number);
+		out.println("<br />");
+		
+		out.println("File is: " + file);
+		out.println("<br />");
+		
+		out.println("gender is: " + gender);
+		out.println("<br />");
+		
+		out.println("languages are: " + String.join(", ", languages));
+		out.println("<br />");
+		
+		out.println("course is: " + course);
+		out.println("<br />");
+		
+		out.println("comment is: " + comment);
+		out.println("<br />");
+		
+		out.println("</body>");
+		out.println("</html>");
+		
+		out.close();
+	}
+}
