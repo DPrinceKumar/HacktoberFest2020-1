@@ -1,5 +1,5 @@
-// Check if array is sorted. 
-// Working even if array has repeated elements
+// Checking if array is sorted
+// Working even elements are repeated
 
 const isSort = arr => {
     if (arr.length <= 1) return "Array is too small";
@@ -14,4 +14,4 @@ const isSort = arr => {
 
 
 //example
-console.log(isSort([1,1,1,3,4,7,9,170])); // "Array is sorted Ascending"
+console.log(isSort([1,1,1,3,4,7,9,57])); // "Array is sorted Ascending"
