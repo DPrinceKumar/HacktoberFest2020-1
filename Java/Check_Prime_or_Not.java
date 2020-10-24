@@ -1,22 +1,39 @@
 import java.util.Scanner;
 
-public class Check_Prime_or_Not{
-    public static void main(String[] args) {
+public class PrimeOrNot {
+	public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter number to check Prime or Not.");
         int num = scan.nextInt();
-        int flag=1;
-        for (int i = 2; i < num; i++) {
-            if (num % i ==0) {
-                System.out.println("Entered number is not Prime!");
-                flag =0;
-                break;
-            }
+        
+        primeOrNot(num);
+        
+    }
+	
+	public static void primeOrNot(int num){
+        int count = 0;
+        
+        if(num == 1){
+            System.out.println("1 is nether a prime number nor a composite number");
         }
-        if (flag==1) {
-            System.out.println("Entered number is Prime!");
+        else
+        {
+            for(int i=1;i<=num;i++){
+                if(num%i == 0){
+                    count++;
+                }
+                
+            }
+            if(count==2){
+                System.out.println("Prime Number");
+            }
+            else
+            {
+                System.out.println("Not a prime number");
+            }
         }
     }
 }
 
-//Created by Shrikant Daund
+
+//Created by Atul Jha
