@@ -1,0 +1,27 @@
+#include<iostream>
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+int main()
+{
+  
+int n,d,a,k=0;
+cin>>n>>d>>a;
+while (n--)
+{
+	int b;
+    cin>>b;
+    if(a>=b)
+    { 
+     b=b+d;
+     
+    k++;          
+     }
+    else
+    a=b;                 
+   
+
+}
+cout<<k;
+return 0;
+}
