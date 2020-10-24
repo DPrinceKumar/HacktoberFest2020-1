@@ -1,116 +1,98 @@
-# Tic-Tac-Toe Program using 
-# random number in Python 
+def pattern_not_formed(Player, Letter):
+    '''Code to check winning condition
+       Takes player and player character as input '''
+    match = True
+    for i in [0,3,6]:
+        if a[i] == Letter and a[i+1] == Letter and a[i+2] == Letter:
+            match = False
+    for i in range(3):
+        if a[i] == Letter and a[i+3] == Letter and a[i+6] == Letter:
+            match = False
+    if a[0] == Letter and a[4] == Letter and a[8] == Letter:
+            match = False
+    if a[2] == Letter and a[4] == Letter and a[6] == Letter:
+        match = False
+    if match == False :
+        print(f"{Player} has won !!!/n Congratulations")
+    return match
 
-# importing all necessary libraries 
-import numpy as np 
-import random 
-from time import sleep 
+def run():
+    ''' code to check stopping condition'''
+    if not(free_space() and (pattern_not_formed("player 1", "X") and pattern_not_formed("player 2","O"))):
+        if not(free_space()) and (pattern_not_formed("player 1", "X") and pattern_not_formed("player 2","O")):
+            print("Tie between players")
+        return False
+    else:
+        return True
 
-# Creates an empty board 
-def create_board(): 
-	return(np.array([[0, 0, 0], 
-					[0, 0, 0], 
-					[0, 0, 0]])) 
+def free_space():
+    ''' Code to check if all spaces are occupied'''
+    check = True
+    for i in range(len(a)):
+        if a[i] != ' ':
+            check = False
+        elif a[i] == ' ':
+            check = True
+            break
+    return check
 
-# Check for empty places on board 
-def possibilities(board): 
-	l = [] 
-	
-	for i in range(len(board)): 
-		for j in range(len(board)): 
-			
-			if board[i][j] == 0: 
-				l.append((i, j)) 
-	return(l) 
+def occupancy(n):
+    '''Code to check whether the given position is already occupied
+       Takes the box number as input'''
+    if a[n-1] != ' ':
+        i = int(input("Position Occupied, Enter another number"))
+        occupancy(i)
+    else:
+        return n
 
-# Select a random place for the player 
-def random_place(board, player): 
-	selection = possibilities(board) 
-	current_loc = random.choice(selection) 
-	board[current_loc] = player 
-	return(board) 
+def matrix_print():
+    '''TO print result after every turn'''
+    for i in [0,3,6]:
+        print(f'{a[i]} | {a[i+1]} | {a[i+2]}')
 
-# Checks whether the player has three 
-# of their marks in a horizontal row 
-def row_win(board, player): 
-	for x in range(len(board)): 
-		win = True
-		
-		for y in range(len(board)): 
-			if board[x, y] != player: 
-				win = False
-				continue
-				
-		if win == True: 
-			return(win) 
-	return(win) 
+def matrix_input(player_ch):
+    '''TO input box number
+       Takes the player charater as input'''
+    n= int(input("Enter the box number \n"))
+    n = occupancy(n)
+    a[n-1] = player_ch
+    matrix_print()
 
-# Checks whether the player has three 
-# of their marks in a vertical row 
-def col_win(board, player): 
-	for x in range(len(board)): 
-		win = True
-		
-		for y in range(len(board)): 
-			if board[y][x] != player: 
-				win = False
-				continue
-				
-		if win == True: 
-			return(win) 
-	return(win) 
+def player_1():
+    print("Player1 turn:")
+    matrix_input('X')
+    return
 
-# Checks whether the player has three 
-# of their marks in a diagonal row 
-def diag_win(board, player): 
-	win = True
-	y = 0
-	for x in range(len(board)): 
-		if board[x, x] != player: 
-			win = False
-	if win: 
-		return win 
-	win = True
-	if win: 
-		for x in range(len(board)): 
-			y = len(board) - 1 - x 
-			if board[x, y] != player: 
-				win = False
-	return win 
+def player_2():
+    print("Player2 turn:")
+    matrix_input('O')
+    return
 
-# Evaluates whether there is 
-# a winner or a tie 
-def evaluate(board): 
-	winner = 0
-	
-	for player in [1, 2]: 
-		if (row_win(board, player) or
-			col_win(board,player) or
-			diag_win(board,player)): 
-				
-			winner = player 
-			
-	if np.all(board != 0) and winner == 0: 
-		winner = -1
-	return winner 
+def console():
+    ''' Main function that handles essential calling of functions'''
+    player_1()
+    player_2()
+    while(run()):
+        player_1()
+        if run() == True:
+            player_2()
+        else:
+            break
 
-# Main function to start the game 
-def play_game(): 
-	board, winner, counter = create_board(), 0, 1
-	print(board) 
-	sleep(2) 
-	
-	while winner == 0: 
-		for player in [1, 2]: 
-			board = random_place(board, player) 
-			print("Board after " + str(counter) + " move") 
-			print(board) 
-			sleep(2) 
-			counter += 1
-			winner = evaluate(board) 
-			if winner != 0: 
-				break
-	return(winner) 
-
-# Driver Code 
-print("Winner is: " + str(play_game())) 
+print("Welcome to TIC TAC TOE")
+ch=1
+while ch != 2:
+    print("=====================================================")
+    ch = int(input('Enter 1 To play \nEnter 2 to exit \n'))
+    print("=====================================================")
+    if ch == 1:
+        print("Sample Number Box:")
+        print("1 | 2 | 3\n---------\n4 | 5 | 6\n---------\n7 | 8 | 9")
+        print("=====================================================")
+        print("Player 1 has X")
+        print("Player 2 has O")
+        print('=====================================================')
+        a = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+        console()
+    elif ch==2:
+        print("Thank You!!  :)")

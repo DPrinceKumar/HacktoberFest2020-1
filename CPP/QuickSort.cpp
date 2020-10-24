@@ -2,6 +2,7 @@
 #include <bits/stdc++.h> 
 using namespace std; 
 
+/*swap function*/
 void swap(int* a, int* b) 
 { 
 	int t = *a; 
@@ -9,7 +10,7 @@ void swap(int* a, int* b)
 	*b = t; 
 } 
 
-
+/*partition function*/
 int partition (int arr[], int low, int high) 
 { 
 	int pivot = arr[high]; // pivot 
@@ -28,7 +29,7 @@ int partition (int arr[], int low, int high)
 	return (i + 1); 
 } 
 
-
+/*quicksort function*/
 void quickSort(int arr[], int low, int high) 
 { 
 	if (low < high) 
@@ -41,6 +42,7 @@ void quickSort(int arr[], int low, int high)
 	} 
 } 
 
+/*print array function*/
 void printArray(int arr[], int size) 
 { 
 	int i; 

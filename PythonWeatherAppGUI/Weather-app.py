@@ -6,6 +6,7 @@ import random
 
 wind= Tk()
 wind.title('Weather App')
+wind.geometry("500x400")
 
 def fetch(fr):
     try:
