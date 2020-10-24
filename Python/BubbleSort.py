@@ -1,21 +1,14 @@
-'''
-  Name : Cyb3rM3rlin
-  Program Name : Bubble sort
-  '''
+def bubbleSort(arr): 
+    n = len(arr) 
+    for i in range(n-1): 
+        for j in range(0, n-i-1): 
+            if arr[j] > arr[j+1] : 
+                arr[j], arr[j+1] = arr[j+1], arr[j] 
   
-def BubbleSort(list):
-  for i in range(len(list)-1):
-    for j in range(len(list)- i - 1):
-      if (list[j]>list[j+1]):
-        list[j+1]+=list[j]
-        list[j]= list[j+1]-list[j]
-        list[j+1] = list[j+1]-list[j]
-string = input("Enter elements to be sorted separated by space")
-list = string.split()
-
-for i in range(len(list)):
-  list[i] = int(list[i])
-BubbleSort(list)
-
-print("Sorted list by bubble sort is :" ,list)
-    
+arr=list(map(int, input("Enter The Numbers with spaces\n").split()))
+  
+bubbleSort(arr) 
+  
+print ("Sorted array is:") 
+for i in range(len(arr)): 
+    print ("%d" %arr[i]),  
