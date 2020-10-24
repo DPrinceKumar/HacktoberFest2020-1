@@ -1,0 +1,19 @@
+public class DiagonalMatrix {
+   public static void main(String args[]){
+      int a[][]={{1,2,3},{4,5,6},{7,8,9}};
+      int rows = a.length;
+      int columns = a[0].length;
+      for (int i = 0; i < rows; i++) {
+         for (int r = i, c = 0; r >= 0 && c < columns; r--, c++){
+            System.out.print(a[r][c] + " ");
+         }
+         System.out.println();
+      }
+      for (int i = 1; i < columns; i++) {
+         for (int r = rows-1, c = i; r >= 0 && c < columns; r--, c++) {
+            System.out.print(a[r][c] + " ");
+         }
+         System.out.println();
+      }
+   }
+}
