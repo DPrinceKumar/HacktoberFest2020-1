@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    height:100vh;
+}
+
+.header{
+    background-color: #1D9345;
+    height: 10%;
+    text-align: center;
+    padding:20px;
+}
+
+.container{
+    height: 90%;
+    margin:10px 20px 0px 20px;
+}
+
+.userinput{
+    padding: 10px;
+}
+
+.userinput h2{
+    margin:0px 0px 10px 73px ;
+    font-size: 30px;
+}
+
+#input{
+    margin:0px 5px 0px 70px;
+    height:40px;
+    border:2px solid  #EEEDEE;
+    padding:20px;
+}
+
+#btn{
+    height: 40px;
+    width:40px;
+    outline: none;
+    border:none;
+    background-color:rgb(64, 73, 73);
+    color:white;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 100%;
+    transition: 0.3s all;
+}
+
+.error{
+    margin-left: 5px;
+    color: red;
+    display: none;
+}
+
+#noinput,#noinput2{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#btn:hover{
+    background-color:#3B3C44;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px 0px slategrey;
+}
+
+.main{
+    padding: 10px;
+    display:flex;
+    height: 100%;
+}
+
+.left{
+    border: 2px solid #EEEDEE;
+    padding: 17px;
+    flex:0.5;
+    margin:10px 0px 0px 73px;
+}
+
+
+.list{
+    display: none;
+}
+
+.list1{
+    font-size: 20px;
+    margin-top: 15px;
+    padding: 5px 0px 5px 5px;
+    justify-content: space-between;
+    border: 2px solid  #EEEDEE;
+    display:none;
+}
+
+.product{
+    margin-left: 30px;
+}
+
+
+#delete{
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: none;
+    background-color: #EF4648;
+    color:white;
+    margin-right: 30px;
+    transition: all 0.3s ease;
+}
+
+#delete:hover{
+    cursor: pointer;
+    background-color: rgb(186,0,0);
+}
+
+.right{
+    border:2px solid #EEEDEE;
+    padding: 17px;
+    margin:10px 73px 0px 0px;
+    flex:0.5;
+}
+
+@media all and (max-width:735px){
+    .main{
+        flex-direction: column;
+    }
+    .right,.left{
+        margin:0px 73px 0px 73px;
+    }
+}

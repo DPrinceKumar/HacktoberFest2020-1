@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="typo"> My Shopping List  </h1>
+    </div>
+    <div class="container">
+        <div class="userinput">
+            <h2 class="typo">Add Items</h2>
+            <input type="text"placeholder="Bread,Chocolates etc.." id="input">
+            <input type="button" value="+" id="btn">
+            <span class="error" id="error">Enter a Valid List Item</span>
+        </div>
+        <div class="main">
+            <div class="left" id='l'>
+                <h2 class="typo">Your List</h2>
+                <div class="list" id="original">
+                    <span id="product">Item 1</span>
+                    <input type="button" value="X" id="delete" class="delb">
+                </div>
+                <div id="noinput">
+                    Your List seems Empty !
+                </div>
+            </div>
+            <div class="right" id='r'>
+                <h2 class="typo">Your Cart </h2>
+                <div class="list2" id='list2'>
+                    <div id="noinput2">
+                        Your cart seems Empty !
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
