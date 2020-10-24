@@ -13,6 +13,7 @@ void main()
     printf("enetr the no of rows");
     scanf("%d",&n);
     k=n;
+  //for loops
     for (i=0;i<n;i++)
     {
         for (j=0;j<=i;j++)

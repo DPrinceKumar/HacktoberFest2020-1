@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+void main(){
+
+ //declaration of variable
+ float d,t, speed;
+ 
+ /*
+ we're taking
+ d variable for distance
+ t variable for time
+ */
+
+ //getting the value of d from user
+ printf("Enter the Value Of Distance");
+ scanf("%f",&d);
+
+ //getting the value of t from user
+ printf("Enter the Value Of Time 'T' ");
+ scanf("%f",&t);
+
+ if(t>0 && d>0) //applying condition since time and distance can't be negative
+ {
+  // formula to find speed
+  speed= d/t;
+  printf("With distance %f and time %f, the value of speed is %f km", d, t, speed);
+ }
+ else
+ {
+  printf("Distance or Time can't be negative");
+ }
+}
