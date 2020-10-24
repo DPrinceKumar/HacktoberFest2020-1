@@ -1,0 +1,11 @@
+# even or odd via bitwise AND operator.
+
+# i/p: 10
+# o/p: Even number
+
+
+number=10
+if number&1:
+  print('Odd number')
+else:
+  print('Even number')
