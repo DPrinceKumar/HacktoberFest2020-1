@@ -1,0 +1,73 @@
+// A Program that exercise the operations on Stack
+// Implementing POINTER (Linked Structures) (Dynamic Binding) // This program provides you the concepts that how STACK is 
+// implemented using Pointer/Linked Structures
+#include <iostream.h.h>
+#include <process.h> struct node {
+int info;
+struct node *next; 
+};
+struct node *TOP = NULL; void push (int x)
+{ struct node *NewNode;
+NewNode = new (node); // (struct node *) malloc(sizeof(node)); 
+if(NewNode==NULL) { cout<<"\n\n Memeory Crash\n\n"; 
+return; }
+NewNode->info = x;
+NewNode->next = NULL;
+if(TOP == NULL) TOP = NewNode;
+ 
+
+
+
+
+
+else
+{ NewNode->next = TOP; TOP=NewNode;
+}
+}
+struct node* pop () 
+{ struct node *T; 
+T=TOP;
+TOP = TOP->next; 
+return T;
+}
+void Traverse() 
+{ struct node *T;
+for( T=TOP ; T!=NULL ;T=T->next) cout<<T->info<<endl; 
+}
+bool IsEmpty()
+{ if(TOP == NULL) return true; else return false; } int main ()
+{ struct node *T; 
+int item, ch;
+while(1)
+{ cout<<"\n\n\n\n\n\n ***** Stack Operations *****\n"; cout<<"\n\n 1- Push Item \n 2- Pop Item \n"; 
+cout<<" 3- Traverse/Print stack-values\n 4- Exit\n\n"; cout<<"\n Your Choice --> ";
+cin>>ch;
+switch(ch) 
+{ case 1:
+cout<<"\nPut a value: "; cin>>item;
+Push(item); 
+break;
+case 2:
+if(IsEmpty()) {cout<<"\n\n Stack is Empty\n"; 
+break;
+}
+T= Pop();
+cout<< T->info <<"\n\n has been deleted \n"; 
+break;
+case 3:
+if(IsEmpty()) {cout<<"\n\n Stack is Empty\n"; 
+break;
+}
+Traverse(); 
+break;
+case 4:
+ 
+
+
+
+
+
+exit(0);
+} // end of switch block } // end of loop
+return 0;
+} // end of main function
