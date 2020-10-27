@@ -1,0 +1,43 @@
+{% extends "posts/base.html" %}
+
+{% block title %}
+BlogoNode
+  
+{% endblock title %}
+
+
+{% block content %}
+
+    <div class="container">
+        <h1>Post list</h1>
+        <div class="row">
+        {% for object in object_list %}
+        <div class="col-4">
+        <div class="card" style="width: 18rem; height: 100%;">
+            <img class="card-img-top" style="height: 40%;" src="{{object.thumbnail.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{object.title}}</h5>
+              <p class="card-text"> {{object.content|truncatechars:9}} </p>
+            
+              <p class="card-text">
+                  <span><i class="fas fa-comments"></i>{{object.get_comment_count}}</span>
+                  <span><i class="fas fa-eye"></i>{{object.get_view_count}}</span>
+                  <span><i class="fas fa-thumbs-up"></i>{{object.get_like_count}}</span>
+              </p>
+                <p class="card-text">
+                    Posted {{object.publish_date|timesince}} ago
+                </p>
+
+                <a href="{% url 'posts:post_detail' object.slug %}" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+    </div>
+    
+
+
+{% endblock content %}
+    

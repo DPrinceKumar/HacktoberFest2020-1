@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "/home/saim/.virtualenvs/django_env/bin/python",
+    "emmet.includeLanguages": {"django-html": "html"},
+    "[django-html]": {
+
+    },
+    "files.associations": {
+        "*.html": "html"
+    }
+}
