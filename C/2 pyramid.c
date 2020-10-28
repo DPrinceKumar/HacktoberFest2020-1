@@ -6,7 +6,7 @@
    **
    *
 */
-#include<stdio.h>
+#include<stdio.h>                               //standard Input Output header 
 void main()
 {
     int n,i,j,k;
