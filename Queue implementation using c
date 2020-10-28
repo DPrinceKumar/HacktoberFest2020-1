@@ -1,0 +1,143 @@
+Array and linked implementation of queues in C
+
+// c-language code to implement  QUEUE using array
+#include<iostream.h>
+#include <process.h>
+#define MAXSIZE 10 // int const MAXSIZE = 10; // Global declarations and available to every int Queue[MAXSIZE];
+int front = -1; 
+int rear = -1; 
+int count =0;
+bool IsEmpty(){if(count==0)return true; else return false; }
+bool IsFull() { if( count== MAXSIZE) return true; else return false;} void Enqueue(int ITEM)
+{ if(IsFull()) { cout<< "\n QUEUE is full\n"; return;}
+if(count == 0) rear = front= 0; // first item to enqueue 
+else
+if(rear == MAXSIZE -1) rear=0 ; // Circular, rear set to zero else rear++;
+ 
+
+
+
+
+
+
+Queue[rear]=ITEM; 
+count++;
+}
+int Dequeue() 
+{
+if(IsEmpty()) { cout<<"\n\nQUEUE is empty\n"; return -1; } int ITEM= Queue[front];
+count--;
+if(count == 0 ) front = rear = -1;
+else if(front == MAXSIZE -1) front=0; else front++;
+return ITEM; 
+}
+void Traverse() 
+{ int i;
+if(IsEmpty()) cout<<"\n\nQUEUE is empty\n"; 
+else
+{ i = front; 
+While(1)
+{ cout<< Queue[i]<<"\t"; 
+if (i == rear) break;
+else if(i == MAXSIZE -1) i = 0; else i++;
+}
+} 
+}
+int main() 
+{
+int choice,ITEM; 
+while(1)
+{
+cout<<"\n\n\n\n QUEUE operation\n\n";
+cout<<"1-insert value \n 2-deleted value\n"; 
+cout<<"3-Traverse QUEUE \n 4-exit\n\n"; 
+cout<<"\t\t your choice:"; cin>>choice; 
+switch(choice)
+{
+case 1:
+cout"\n put a value:"; cin>>ITEM);
+Enqueue(ITEM);break; 
+case 2:
+ITEM=Dequeue();
+if(ITEM!=-1)cout<<t<< " deleted \n"; 
+break;
+case 3:
+cout<<"\n queue state\n"; Traverse(); break;
+case 4:exit(0); 
+}
+}
+return 0; 
+}
+
+// A Program that exercise the operations on QUEUE // using POINTER (Dynamic Binding)
+#include <conio.h>
+ 
+
+
+
+
+
+
+#include <iostream.h> struct QUEUE
+{ int val;
+QUEUE *pNext; 
+};
+QUEUE *rear=NULL, *front=NULL; void Enqueue(int);
+int Dequeue(void);
+void Traverse(void); 
+void main(void) 
+{ int ITEM, choice; 
+while( 1 )
+{
+cout<<" ******* QUEUE UNSING POINTERS ********* \n"; 
+cout<<" \n\n\t ( 1 ) Enqueue \n\t ( 2 ) Dequeue \n"; 
+cout<<"\t ( 3 ) Print queue \n\t ( 4 ) Exit."; 
+cout<<" \n\n\n\t Your choice ---> "; 
+cin>>choice);
+switch(choice) 
+{
+case 1: cout<< "\n Enter a number: "; cin>>ITEM;
+Enqueue(ITEM); 
+break;
+case 2: ITEM = Dequeue();
+if(ITEM) cout<<” \n Deleted from Q = “<<ITEM<<endl; 
+break;
+case 3: Traverse(); 
+break;
+case 4: exit(0); 
+break;
+default: cout<<"\n\n\t Invalid Choice: \n"; } // end of switch block
+} // end of while loop
+} // end of of main() function 
+void Enqueue (int ITEM) 
+{ struct QUEUE *NewNode; 
+// in c++ NewNode = new QUEUE;
+NewNode = (struct QUEUE *) malloc( sizeof(struct QUEUE)); NewNode->val = ITEM;
+NewNode->pNext = NULL; 
+if (rear == NULL) 
+front = rear= NewNode; 
+else
+{
+rear->pNext = NewNode; rear = NewNode; 
+}
+}
+int Dequeue(void)
+{ if(front == NULL) {cout<<” \n <Underflow> QUEUE is empty\n"; return 0;
+}
+int ITEM = front->val;
+if(front == rear ) front=rear=NULL; else front = front-> pNext; 
+return(ITEM);
+}
+ 
+
+
+
+
+
+void Traverse(void)
+{ if(front == NULL) {cout<< " \n <Underflow> QUEUE is empty\n"; return; }
+QUEUE f = front; 
+while(f!=rear)
+{ cout front->val << ", "; f=f->pNext;
+}
+}
