@@ -1,0 +1,22 @@
+///NICOI ALEXANDRU - tr0yyy
+///cpp implementation of coprime
+
+#include <iostream>
+
+using namespace std;
+
+long a,b,r;
+int main()
+{
+    cin>>a>>b;
+    while(b!=0)
+    {
+        r=a%b;
+        a=b;
+        b=r;
+    }
+    if(a==1)
+        cout<<"Coprime";
+    else cout<<"No coprime";
+    return 0;
+}
