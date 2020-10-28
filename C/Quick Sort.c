@@ -1,7 +1,7 @@
 Quick Sort
-#include <stdio.h>
+#include <stdio.h>         //standard input output header file
 #include<stdlib.h>
-void swap(int *x,int *y)
+void swap(int *x,int *y)    //function swaps two numbers
 {
  int temp=*x;
  *x=*y;
