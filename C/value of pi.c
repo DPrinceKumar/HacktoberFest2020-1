@@ -17,7 +17,7 @@ void pie(int n)
     float sum=0, theta,inv;
     for (i=1;i<n+1;i++)
     {
-        sq=i*i;
+        sq=pow(i,2);
         inv=1/sq;
         sum=sum+inv;
         printf("\n sum is => %f,%f",inv,sum);
