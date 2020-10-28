@@ -1,0 +1,60 @@
+{% extends "posts/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  {{object.title}}
+{% endblock title %}
+
+{% block content %}
+
+<div class="row">
+<div class="col-4 offset-4">
+
+  <div class="card" style="padding:10px">
+    <h5 class="card-title text-center">{{object.title}}</h5>
+    <img class="card-img-top" src="{{object.thumbnail.url}}" alt="Card image cap">
+    <div class="card-body">
+    <hr>
+      <p class="card-text">
+          <span><i class="fas fa-comments"></i> {{object.get_comment_count}}</span>
+          <span><i class="fas fa-eye"></i> {{object.get_view_count}}</span>
+          <span><i class="fas fa-thumbs-up"></i> {{object.get_like_count}}</span>
+          <span class="float-right">Posted {{object.publish_date|timesince}} ago</span>
+      </p>
+      <hr>
+      <p class="card-text"> {{object.content}} </p>
+      {% if request.user == object.author %}
+      <hr>
+        <a href="{% url 'posts:post_update' object.slug %}" class="btn btn-info btn-sm">Edit</a>
+        <a href="{% url 'posts:post_delete' object.slug %}" class="btn btn-danger btn-sm">Delete</a>        
+      {% endif %}
+      {% if request.user.is_authenticated %}
+      <hr>
+      <h4>Enjoyed this post ? Like it then</h4>
+      <a class="text-muted" href=" {% url 'posts:like_post' object.slug %} ">
+        <i class="fas fa-thumbs-up fa-lg"></i>
+        Like {{object.get_like_count}}
+      </a>        
+      
+      <hr>
+      <h4>Leave A comment below</h4>
+      <form method="post">
+        {% csrf_token %}
+        {{form.content}}
+        <button type="submit" class="btn btn-primary btn-sm">Comment</button>
+      </form>
+      {% endif %}
+      <hr>
+      <h5>Comments</h5>
+      {% for comment in object.comments %}
+      <p> {{comment.content}} 
+        <br>
+        <small>{{comment.timestamp|timesince}} ago</small>
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock content %}
