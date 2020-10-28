@@ -1,15 +1,37 @@
-let scoreUserEl = document.getElementById("score-player");
-let scorePCEl = document.getElementById("score-pc");
-let roundResultEl = document.getElementById("roundResult");
+const scoreUserEl = document.getElementById("score-player");
+const scorePCEl = document.getElementById("score-pc");
+const roundResultEl = document.getElementById("roundResult");
+const pcChoiceRandom = document.getElementById("pc-choice-button");
+const pcChoiceRandomIncentive = document.getElementsByClassName("choice-button");
 
-let choices = ["Kámen", "Nůžky", "Papír"];
+
+
+const choices = ["Kámen", "Nůžky", "Papír"];
+const choices1 = {
+    "Kámen":"✊",
+    "Nůžky":"✌", 
+    "Papír":"🖐"}
+
+
+
 let userChoice = "";
 let pcChoice = "";
-
 let scorePC = 0;
 let scoreUser = 0;
 
-function validateChoice(btnId){
+
+const pausecomp = (millis) =>
+{
+    var date = new Date();
+    var curDate = null;
+    do { curDate = new Date(); }
+    while(curDate-date < millis);
+}
+
+
+
+
+const validateChoice = (btnId) =>{
     switch (btnId){
         case "btnKamen":
             userChoice = "Kámen";
@@ -22,47 +44,51 @@ function validateChoice(btnId){
             break;
     }
 
-    pcChoice = choices[Math.floor(Math.random() * choices.length)];
+    let pcChoice = choices[Math.floor(Math.random() * choices.length)];
+    pcChoiceRandom.firstChild.nodeValue = choices1[pcChoice];
 
-    if (userChoice == "Kámen" && pcChoice == "Kámen"){
-        roundResult.innerHTML = "remíza!";
 
-    } else if (userChoice == "Nůžky" && pcChoice == "Kámen"){
-        roundResult.innerHTML = "prohra!";
+    console.log(userChoice, pcChoice)
+
+    if (userChoice === "Kámen" && pcChoice === "Kámen"){
+        roundResultEl.firstChild.nodeValue = "remíza!";
+
+    } else if (userChoice === "Nůžky" && pcChoice === "Kámen"){
+        roundResultEl.firstChild.nodeValue = "prohra!";
         scorePC += 1;
-    } else if (userChoice == "Papír" && pcChoice == "Kámen"){
-        roundResult.innerHTML = "výhra!";
+    } else if (userChoice === "Papír" && pcChoice === "Kámen"){
+        roundResultEl.firstChild.nodeValue = "výhra!";
         scoreUser += 1;
 
-    } else if(userChoice == "Kámen" && pcChoice == "Nůžky"){
-        roundResult.innerHTML = "výhra!";
+    } else if(userChoice === "Kámen" && pcChoice === "Nůžky"){
+        roundResultEl.firstChild.nodeValue = "výhra!";
         scoreUser += 1;
 
-    } else if (userChoice == "Nůžky" && pcChoice == "Nůžky"){
-        roundResult.innerHTML = "remíza!";
+    } else if (userChoice === "Nůžky" && pcChoice === "Nůžky"){
+        roundResultEl.firstChild.nodeValue = "remíza!";
 
-    } else if (userChoice == "Papír" && pcChoice == "Nůžky"){
-        roundResult.innerHTML = "prohra!";
+    } else if (userChoice === "Papír" && pcChoice === "Nůžky"){
+        roundResultEl.firstChild.nodeValue = "prohra!";
         scorePC += 1;
 
-    }else if (userChoice == "Kámen" && pcChoice == "Papír"){
-        roundResult.innerHTML = "prohra!";
+    } else if (userChoice === "Kámen" && pcChoice === "Papír"){
+        roundResultEl.firstChild.nodeValue = "prohra!";
         scorePC += 1;
 
-    } else if (userChoice == "Nůžky" && pcChoice == "Papír"){
-        roundResult.innerHTML = "výhra!";
+    } else if (userChoice === "Nůžky" && pcChoice === "Papír"){
+        roundResultEl.firstChild.nodeValue = "výhra!";
         scoreUser += 1;
 
-    } else if (userChoice == "Papír" && pcChoice == "Papír"){
-        roundResult.innerHTML = "remíza!";
+    } else if (userChoice === "Papír" && pcChoice === "Papír"){
+        roundResultEl.firstChild.nodeValue = "remíza!";
 
     } else {
-        roundResult.innerHTML = "chyba v kódu. Stěžuj si programátorovi!";
+        roundResultEl.firstChild.nodeValue = "chyba v kódu. Stěžuj si programátorovi!";
     }
 
     console.log("Tah uživatel: " + userChoice + ", tah pc: " + pcChoice);
 
-    scoreUserEl.innerHTML = scoreUser;
-    scorePCEl.innerHTML = scorePC;
+    scoreUserEl.firstChild.nodeValue = scoreUser;
+    scorePCEl.firstChild.nodeValue = scorePC;
 
 }
