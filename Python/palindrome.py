@@ -1,16 +1,25 @@
-def isPalindrome(str):
- 
-    # Run loop from 0 to len/2 
-    for i in range(0, int(len(str)/2)): 
-        if str[i] != str[len(str)-i-1]:
-            return False
-    return True
- 
-# main function
-s = "malayalam"
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[3]:
+
+
+def isPalindrome(s):
+	return s == s[::-1]
+
+
+# Driver code
+s = "123321"
 ans = isPalindrome(s)
- 
-if (ans):
-    print("Yes")
+
+if ans:
+	print("Yes")
 else:
-    print("No")
+	print("No")
+
+
+# In[ ]:
+
+
+
+
