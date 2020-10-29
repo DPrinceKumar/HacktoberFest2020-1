@@ -1,4 +1,4 @@
-# Read [Contribution file](https://github.com/DPrinceKumar/HactoberFest2020-1/blob/master/CONTRIBUTING.md) for successful merge
+﻿# Read [Contribution file](https://github.com/DPrinceKumar/HactoberFest2020-1/blob/master/CONTRIBUTING.md) for successful merge
 
 [![Go to hacktoberfest](https://hacktoberfest.digitalocean.com/assets/HF-full-logo-b05d5eb32b3f3ecc9b2240526104cf4da3187b8b61963dd9042fdc2536e4a76c.svg)](https://hacktoberfest.digitalocean.com) <br/>
 # Hello People!!  <br/>
@@ -29,3 +29,4 @@ ___
 <img src="https://i.ibb.co/DVjgKQG/Screenshot-2020-10-01-at-11-06-03-AM.png" alt="Screenshot-2020-10-01-at-11-06-03-AM" border="0"></a>  <br/>
   <br/>
 ## Repeat Same step 4 time and check your hacktober profile  <br/>
+## Make sure to read  [Contribution file](https://github.com/DPrinceKumar/HactoberFest2020-1/blob/master/CONTRIBUTING.md) before contributing any code and follow the convention <br/>
