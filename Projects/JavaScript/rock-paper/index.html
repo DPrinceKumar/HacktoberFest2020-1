@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Kámen, Nůžky, Papír ...Teď!</title>
+</head>
+<body>
+    <div class="header-container">
+        <h1 class="header-text">Kámen, nůžky, papír, teď !</h1>
+    </div>
+
+    <div class="buttons">
+        <button type="button" onclick="validateChoice('btnKamen')" class="choice-button">✊</button>
+        <button type="button" onclick="validateChoice('btnNuzky')" class="choice-button">✌</button>
+        <button type="button" onclick="validateChoice('btnPapir')" class="choice-button">🖐</button>
+    </div>
+
+    <div class="round-container">
+        <h3>Výsledek tahu: </h3> <span id="roundResult"></span>
+    </div>
+
+
+    <div class="score-conatiner">
+        <h3>Skóre Hráč:</h3><span id="score-player" class="score-span">0</span>
+        <h3>Skóre počítač:</h3><span id="score-pc" class="score-span">0</span>
+    </div>
+
+</body>
+</html>
