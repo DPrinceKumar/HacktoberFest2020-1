@@ -1,0 +1,115 @@
+
+
+body{
+    
+ width: 100%;
+ height: 100rem;
+ margin : 0px;
+text-align: center;
+
+/* background-color: rgb(145, 88, 194); */
+
+}
+
+
+.cont{
+    height: fit-content;
+    width:86%;
+    margin: auto;
+    margin-top: 100px;
+    background-color: rgba(255,255,255,0.6);
+    padding-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+   
+   }
+.heading{
+    color: rgb(97, 93, 93);
+    font-family: 'Oswald', monospace;
+    background-color: whitesmoke;
+    height: 50px;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 2em;
+    text-transform: uppercase;
+    
+}
+
+#addnewtodo{
+    background-color: rgba(255,255,255,0);
+    border: 0px;
+    font-size: 1.2em;
+    border-radius: 50%;
+
+}
+
+
+#inputbox
+{
+   border: 0px;
+   border-bottom: solid black 2px;
+    width: 88%;
+    height: 1.5em;
+   
+    
+}
+#list>li
+{
+    text-align: start;
+    border-bottom: gray 1px solid;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+    padding-bottom: 1px;
+    
+}
+#list >li> label{
+    flex: 10;
+    overflow: hidden;
+    color:black;
+    font-family: Roboto;
+    font-size: 0.8em;
+}
+.check{
+    flex: 0;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+
+.theme{
+    background-color: rgb(116, 116, 231);
+    color: white;
+    text-transform: capitalize;
+    border: black solid 1x;
+   
+
+}
+.imageadd{
+    width: 100%;
+    /* background-image: url(bgimg.png); */
+}
+.delete{
+    margin: 3px;
+   border: 0px;
+   padding: 3px 5px;
+}
+
+.checked> label{
+    text-decoration: line-through;
+}
+
+#btn{
+  
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 20px;
+    text-transform: capitalize;
+    font-family: 'Roboto';
+    font-size: 1.em;
+    border: 0px;
+    border-radius: 3px;
+    
+}
