@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main() {
+	ll N, K, data;
+	cin >> N >> K;
+	map<ll, ll> m;
+	for (ll i = 0; i < N; i++) {
+		cin >> data;
+		m[data]++;
+	}
+	vector<pair<ll, ll> > v;
+	for (map<ll, ll>::iterator it = m.begin(); it != m.end(); it++) {
+		v.push_back(make_pair(it->first, it->second));
+		if (it->second>=K){
+		    cout<<0;
+		    return 0;
+		}
+	}
+	vector<ll> sum(N), freq(N);
+	sum[0] = (v[0].first) * (v[0].second), freq[0] = v[0].second;
+	for (ll i = 1; i < v.size(); i++) {
+		sum[i] += sum[i - 1] + (v[i].first) * (v[i].second);
+		freq[i] += freq[i - 1] + v[i].second;
+	}
+	ll ans = sum[v.size()-1] - sum[0] - (freq[v.size()-1]-freq[0])*(v[0].first+1) + K - v[0].second; 
+	for (ll i = 1; i < v.size(); i++) {
+		ll cur, l = freq[i-1]*(v[i].first-1)-sum[i-1], r = sum[v.size()-1] - sum[i] - (freq[v.size()-1]-freq[i])*(v[i].first+1);
+		if (freq[i-1] >= K - v[i].second and freq[v.size()-1]-freq[i] >= K - v[i].second) {
+			cur = min(l, r);
+		}
+		else if (freq[i-1] >= K - v[i].second) {
+			cur = l;
+		}
+		else if (freq[v.size()-1]-freq[i] >= K - v[i].second) {
+			cur = r;
+		}
+		else {
+			cur = l + r;
+		}
+		ans = min(ans, cur + K - v[i].second);
+	}
+	cout << ans;
+}
