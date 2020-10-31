@@ -1,5 +1,5 @@
 // Using Javascript filter array method
-// filter() method takes each element in an array and it applies a conditional statement against it
+// filter() method takes each element in an array and it applies a conditional statement to it
 
 const numbers = [1, 2, 3, 4];
 const evens = numbers.filter(item => item % 2 === 0);
