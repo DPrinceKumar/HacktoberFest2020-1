@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="app.js">
+    const game = () => {
+  let pScore = 0;
+  let cScore = 0;
+
+  //Start the Game
+  const startGame = () => {
+    const playBtn = document.querySelector(".intro button");
+    const introScreen = document.querySelector(".intro");
+    const match = document.querySelector(".match");
+
+    playBtn.addEventListener("click", () => {
+      introScreen.classList.add("fadeOut");
+      match.classList.add("fadeIn");
+    });
+  };
+  //Play Match
+  const playMatch = () => {
+    const options = document.querySelectorAll(".options button");
+    const playerHand = document.querySelector(".player-hand");
+    const computerHand = document.querySelector(".computer-hand");
+    const hands = document.querySelectorAll(".hands img");
+
+    hands.forEach(hand => {
+      hand.addEventListener("animationend", function() {
+        this.style.animation = "";
+      });
+    });
+    //Computer Options
+    const computerOptions = ["rock", "paper", "scissors"];
+
+    options.forEach(option => {
+      option.addEventListener("click", function() {
+        //Computer Choice
+        const computerNumber = Math.floor(Math.random() * 3);
+        const computerChoice = computerOptions[computerNumber];
+
+        setTimeout(() => {
+          //Here is where we call compare hands
+          compareHands(this.textContent, computerChoice);
+          //Update Images
+          playerHand.src = `./assets/${this.textContent}.png`;
+          computerHand.src = `./assets/${computerChoice}.png`;
+        }, 2000);
+        //Animation
+        playerHand.style.animation = "shakePlayer 2s ease";
+        computerHand.style.animation = "shakeComputer 2s ease";
+      });
+    });
+  };
+
+  const updateScore = () => {
+    const playerScore = document.querySelector(".player-score p");
+    const computerScore = document.querySelector(".computer-score p");
+    playerScore.textContent = pScore;
+    computerScore.textContent = cScore;
+  };
+
+  const compareHands = (playerChoice, computerChoice) => {
+    //Update Text
+    const winner = document.querySelector(".winner");
+    //Checking for a tie
+    if (playerChoice === computerChoice) {
+      winner.textContent = "It is a tie";
+      return;
+    }
+    //Check for Rock
+    if (playerChoice === "rock") {
+      if (computerChoice === "scissors") {
+        winner.textContent = "Player Wins";
+        pScore++;
+        updateScore();
+        return;
+      } else {
+        winner.textContent = "Computer Wins";
+        cScore++;
+        updateScore();
+        return;
+      }
+    }
+    //Check for Paper
+    if (playerChoice === "paper") {
+      if (computerChoice === "scissors") {
+        winner.textContent = "Computer Wins";
+        cScore++;
+        updateScore();
+        return;
+      } else {
+        winner.textContent = "Player Wins";
+        pScore++;
+        updateScore();
+        return;
+      }
+    }
+    //Check for Scissors
+    if (playerChoice === "scissors") {
+      if (computerChoice === "rock") {
+        winner.textContent = "Computer Wins";
+        cScore++;
+        updateScore();
+        return;
+      } else {
+        winner.textContent = "Player Wins";
+        pScore++;
+        updateScore();
+        return;
+      }
+    }
+  };
+
+  //Is call all the inner function
+  startGame();
+  playMatch();
+};
+
+//start the game function
+game();
+    </script>
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  height: 100vh;
+  background-color: rgb(39, 41, 68);
+  font-family: sans-serif;
+}
+
+.score {
+  color: rgb(224, 224, 224);
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.score h2 {
+  font-size: 30px;
+}
+.score p {
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.intro {
+  color: rgb(224, 224, 224);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: opacity 0.5s ease;
+}
+
+.intro h1 {
+  font-size: 50px;
+}
+.intro button,
+.match button {
+  width: 150px;
+  height: 50px;
+  background: none;
+  border: none;
+  color: rgb(224, 224, 224);
+  font-size: 20px;
+  background: rgb(45, 117, 96);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.match {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease 0.5s;
+}
+.winner {
+  color: rgb(224, 224, 224);
+  text-align: center;
+  font-size: 50px;
+}
+
+.hands,
+.options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-hand {
+  transform: rotateY(180deg);
+}
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@keyframes shakePlayer {
+  0% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  15% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  25% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  35% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  65% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  75% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+  85% {
+    transform: rotateY(180deg) translateY(-50px);
+  }
+  100% {
+    transform: rotateY(180deg) translateY(0px);
+  }
+}
+
+@keyframes shakeComputer {
+  0% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(-50px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  35% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  65% {
+    transform: translateY(-50px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  85% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+    <style>
+    <title>Rock paper and scissors</title>
+  </head>
+  <body>
+    <section class="game">
+      <div class="score">
+        <div class="player-score">
+          <h2>Player</h2>
+          <p>0</p>
+        </div>
+        <div class="computer-score">
+          <h2>Computer</h2>
+          <p>0</p>
+        </div>
+      </div>
+
+      <div class="intro">
+        <h1>Rock Paper and Scissors</h1>
+        <button>Let's Play</button>
+      </div>
+
+      <div class="match fadeOut">
+        <h2 class="winner">Choose an option</h2>
+        <div class="hands">
+          <img class="player-hand" src="https://raw.githubusercontent.com/developedbyed/rock-paper-scissor/master/assets/rock.png" alt="" />
+          <img class="computer-hand" src="https://raw.githubusercontent.com/developedbyed/rock-paper-scissor/master/assets/rock.png" alt="" />
+        </div>
+        <div class="options">
+          <button class="rock">rock</button>
+          <button class="paper">paper</button>
+          <button class="scissors">scissors</button>
+        </div>
+      </div>
+    </section>
+
+
+  </body>
+</html>
