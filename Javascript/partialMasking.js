@@ -1,6 +1,6 @@
 
-const partialWordMask = (value, position=2, postfix='*') => {
-   return `${value.substring(0, position)}${value.substring(position).replace(/\S/g, postfix)}`
+const partialWordMask = (value) => {
+   return `${value.substring(0, 2)}${value.substring(2).replace(/\S/g, *)}`
 }
 
 
