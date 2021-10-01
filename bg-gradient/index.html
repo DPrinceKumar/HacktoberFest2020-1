@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(to right, white, black);
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-shadow: 2px 2px gray;
+        }
+        h2{
+            text-align: center;
+        }
+
+        table {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        td {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+    </style>
+    <script></script>
+</head>
+
+<body id="body">
+    <h1>Gradient background</h1>
+    <h2>See which colors go good together!</h2>
+    <table>
+        <tr>
+            <td>Select 1st color:</td>
+            <td> <input type="color" name="color1" id="color1" value="#ffffff"></td>
+        </tr>
+        <tr>
+            <td>Select 2nd color:</td>
+            <td> <input type="color" name="color1" id="color2" value="#000000"></td>
+        </tr>
+        <tr>
+            <td>Hexcode of 1st color is:</td>
+            <td id="1code">#ffffff</td>
+        </tr>
+        <tr>
+            <td>Hexcode of 2nd color is:</td>
+            <td id="2code">#000000</td>
+            
+        </tr>
+
+    </table>
+
+</body>
+<script>
+    var input1 = document.getElementById("color1");
+    var input2 = document.getElementById("color2");
+    var body = document.getElementById("body");
+    function set() {
+        body.style.background = "linear-gradient(to right," + input1.value + "," + input2.value + ")";
+        document.getElementById("1code").innerHTML=input1.value;
+        document.getElementById("2code").innerHTML=input2.value;
+
+    }
+    input1.addEventListener("input", set);
+    input2.addEventListener("input", set);
+
+</script>
+
+</html>
