@@ -6,7 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button id='push'>Push The Element</button>
+    <button id='pop'>Pop The Element</button>
 </body>
 </html>
-<script src = "js code to move element in an array acccoding to offset.js"></script>
+<script>
+    
+const $ = s => document.getElementById('s');
+const insert = $("push");
+const remove = $("pop");
+let arr = [1,2,3,4];
+
+    function pushs(){
+        for(let i = arr[arr.length - 1]; i < arr[arr.length + 1]; i++){
+            arr.push(i);
+        }
+    }
+    function pops(){
+        arr.pop()
+    }
+    insert.onclick = pushs();
+    remove.onclick = pops()
+
+    document.write(arr);
+
+</script>
