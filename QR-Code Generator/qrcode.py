@@ -9,4 +9,4 @@ qr_data = 'http://amey23.github.io/portfolio/#home'
 qr_img = pyqrcode.create(qr_data)
 
 #save the qrcode in png format with proper scaling
-qr_img.png('QR-Code.png', scale= 10)
+qr_img.png('QR-Code.png', scale= 20)
