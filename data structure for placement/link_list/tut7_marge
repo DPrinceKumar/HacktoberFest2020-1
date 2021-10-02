@@ -1,0 +1,80 @@
+  ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode *dumyListNode = new ListNode(-1);
+        ListNode *temp1 = l1 ;
+        ListNode *temp2 = l2 ;
+        ListNode *ansListNode = dumyListNode;
+        int carry = 0;
+        while(temp1!=NULL && temp2!= NULL){
+            int sum = temp1->val +temp2->val;
+            sum = sum + carry; 
+            // cout<<sum<<endl;
+            int ansss = sum%10;
+            
+            ListNode *t = new ListNode(ansss);
+            
+            dumyListNode->next = t;
+
+            
+            if(sum>9){
+                carry = 1;
+            }
+            else{
+                carry = 0;
+               
+            }
+            temp1 = temp1->next;
+            temp2 = temp2->next;
+            dumyListNode = dumyListNode->next;
+
+        }
+        
+        
+        while(temp1!=NULL){
+            // cout<<"1"<<endl;
+              int sum = temp1->val ;
+            sum = sum + carry; 
+              int ansss = sum%10;
+            
+            ListNode *t = new ListNode(ansss);
+            
+            dumyListNode->next = t;
+
+                 if(sum>9){
+                carry = 1;
+            }
+            else{
+                carry = 0;
+            }
+            temp1 = temp1->next;
+            dumyListNode = dumyListNode->next;
+        }
+        
+        while(temp2!=NULL){
+             int sum = temp2->val;
+            sum = sum + carry; 
+              int ansss = sum%10;
+            
+            ListNode *t = new ListNode(ansss);
+            
+            dumyListNode->next = t;
+
+                 if(sum>9){
+                carry = 1;
+            }
+            else{
+                carry = 0;
+            }
+            temp2 = temp2->next;
+            dumyListNode = dumyListNode->next;
+        }        
+        
+        
+        if(carry == 1){
+              ListNode *t ;
+              dumyListNode->next = t;
+                t->val = 1;
+             dumyListNode = dumyListNode->next;
+        }
+        return ansListNode->next; 
+    }
+

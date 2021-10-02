@@ -1,0 +1,1 @@
+{"name":"Local: Q1_check_array_is_sorted","url":"d:\\Apna Collage\\recursion\\part 2\\Q1_check_array_is_sorted.cpp","tests":[{"id":1627234472973,"input":"5\n8 1 2 3 4 5 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Apna Collage\\recursion\\part 2\\Q1_check_array_is_sorted.cpp","group":"local","local":true}
