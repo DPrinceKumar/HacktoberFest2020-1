@@ -1,0 +1,1 @@
+{"name":"Local: nesting_vector_pair","url":"d:\\Apna Collage\\cpp stl\\nesting_vector_pair.cpp","tests":[{"id":1625757827173,"input":"2\n2\n1 2\n3 \n1 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Apna Collage\\cpp stl\\nesting_vector_pair.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: tut5_find_in_sorted_matrix","url":"d:\\Apna Collage\\2D Array\\tut5_find_in_sorted_matrix.cpp","tests":[{"id":1624766469795,"input":"4 4\n1 4 7 11\n2 5 8 12\n3 6 9 16\n10 13 14 19\n\n3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Apna Collage\\2D Array\\tut5_find_in_sorted_matrix.cpp","group":"local","local":true}

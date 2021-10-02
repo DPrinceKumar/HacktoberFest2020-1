@@ -1,0 +1,1 @@
+{"name":"Local: Kth_prime_number","url":"d:\\Apna Collage\\prime_MATH\\Kth_prime_number.cpp","tests":[{"id":1625981369568,"input":"7\n1\n10\n100\n1000\n10000\n100000\n1000000","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Apna Collage\\prime_MATH\\Kth_prime_number.cpp","group":"local","local":true}
