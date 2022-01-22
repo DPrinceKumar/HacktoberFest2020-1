@@ -1,0 +1,4 @@
+#Mon Mar 29 15:51:03 CDT 2021
+base.0=/home/krishna/AndroidStudioProjects/UnitConverter/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
