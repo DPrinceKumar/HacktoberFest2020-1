@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class PrimeOrNot {
@@ -11,20 +12,20 @@ public class PrimeOrNot {
     }
 	
 	public static void primeOrNot(int num){
-        int count = 0;
+        int flag = 0;
         
         if(num == 1){
             System.out.println("1 is nether a prime number nor a composite number");
         }
         else
         {
-            for(int i=1;i<=num;i++){
+            for(int i=2;i<num;i++){
                 if(num%i == 0){
-                    count++;
+                    flag=1;
                 }
                 
             }
-            if(count==2){
+            if(flag==0){
                 System.out.println("Prime Number");
             }
             else
@@ -34,6 +35,3 @@ public class PrimeOrNot {
         }
     }
 }
-
-
-//Created by Atul Jha
