@@ -60,16 +60,13 @@ public class numrev {
 	
 	public static void main(String args[]){
 		Scanner sc=new Scanner(System.in);
-		int n=sc.nextInt();
-		for(int i=1;i<=n;i++){
-			for(int j=i;j<i+n;j++){
-				int k=j%n;
-				if(k==0){
-					k=n;
-				}
-				System.out.print(k);
-			}
-			System.out.println();
+		int number=sc.nextInt();
+		for( ;number != 0; number=number/10)   
+		{  
+			int remainder = number % 10;  
+			reverse = reverse * 10 + remainder;  
+		}  
+			System.out.println(reverse);
 		}
 	}
 }
